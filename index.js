@@ -1,15 +1,21 @@
-function newImage(url, left, bottom) {
-    let object = document.createElement('img')
-    object.src = url
-    object.style.position = 'fixed'
-    object.style.left = left + 'px'
-    object.style.bottom = bottom +'px'
+function newImage() {
+    let item = document.createElement('img')
+    item.src = url
+    item.style.position = 'fixed'
+    item.style.left = left  
+    item.style.bottom = bottom 
     document.body.append(object)
     console.log(object)
     
 }
-newImage('assets/green-character.gif', 100, 100)
-/*let greenCharacter = document.createElement('img')
+newImage('assets/green-character.gif', 100px, 100px)
+newImage('assets/tree.png', 200px, 300px)
+newImage('assets/pillar.png', 350px, 100px)
+newImage('assets/crate.png', 150px, 200px)
+newImage('assets/well.png', 500px, 425px)
+
+
+let greenCharacter = document.createElement('img')
 greenCharacter.src = 'assets/green-character.gif'
 greenCharacter.style.position = 'fixed'
 greenCharacter.style.left = '100px'
@@ -23,3 +29,45 @@ greenTree.style.position = 'fixed'
 greenTree.style.left = '450px'
 greenTree.style.bottom = '200px'
 document.body.append(greenTree)
+
+function newImage(url, left, bottom){
+    let object = document.createElement('img')
+    object.src = url
+    object.style.position = 'fixed'
+    object.style.left = left + 'px'
+    object.style.bottom = bottom + 'px'
+    document.body.append(object)
+    return object
+}
+
+function newItem(url, left, bottom){
+    let item = newImage(url, left, bottom)
+}
+
+function newInventory(){
+    let inventory = document.createElement('div')
+    inventory.style.position = 'fixed'
+    inventory.style.bottom = '0px';
+    inventory.style.left = '0px'
+    inventory.style.width = '100%'
+    inventory.style.height = '100px'
+    inventory.style.display = 'flex'
+    inventory.style.flexDirection = 'row'
+    inventory.style.alignItems = 'center'
+    inventory.style.justifyContent = 'space-evenly'
+    inventory.style.border = '2px solid black'
+    inventory.style.backgroundColor = 'brown'
+    document.body.append(inventory)
+}
+
+newInventory()
+newImage('assets/green-character.gif', 100, 250)
+newImage('assets/tree.png', 200, 450)
+newImage('assets/pillar.png', 350, 250)
+newImage('assets/pine-tree.png', 450, 350)
+newImage('assets/crate.png', 150, 350)
+newImage('assets/well.png', 500, 575)
+
+newItem('assets/sword.png', 500, 555)
+newItem('assets/shield.png', 165, 335)
+newItem('assets/staff.png', 600, 250)
